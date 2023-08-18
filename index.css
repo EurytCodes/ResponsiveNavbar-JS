@@ -1,0 +1,128 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box; 
+}
+body{
+    font-family: Arial;
+    width: 100%;
+    height: 100vh;
+    background: url(img/132.jpg) no-repeat center center/cover;
+}
+
+/*======= Header Code =======*/
+header{
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 25px;
+}
+.logo h2{
+    font-size: 30px;
+    color: burlywood;
+}
+.logo span{
+    color: cadetblue;
+}
+
+
+/*------Navbar Code------*/
+.navbar{
+    display: block;
+}
+.navbar a{
+    position: relative;
+    text-decoration: none;
+    color: burlywood;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 20px;
+    transition: .5s ease;
+}
+.navbar a::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: cadetblue;
+    border-radius: 5px;
+    transform: translateY(5px);
+    opacity: 0;
+    transition: .5s ease;
+}
+.navbar a:hover::after{
+    opacity: 1;
+    transform: translateY(0px);
+}
+.navbar a.active{
+    color: cadetblue;
+    font-weight: 600;
+}
+.navbar a.active::after{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+/*-----Open and Close Btn-----*/
+.closeBtn{
+    display: none;
+}
+.bar{
+    display: none;
+}
+
+
+
+
+
+@media (max-width:780px) {
+    .navbar {
+        position: absolute;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        top: 15%;
+        left: 50%;
+        width: 70%;
+        padding: 10px 0px;
+        transform: translateX(-50%);
+        height: 50%;
+        background-color: rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+        border-radius: 10px;
+        transition: .5s ease;
+    }
+    .navbar a{
+        display: block;
+        width: fit-content;
+        text-align: center;
+        margin: 10px 0px;
+        background-color: transparent;
+        color: wheat;
+    } 
+    .closeBtn{
+        position: absolute;
+        display: block;
+        width: 35px;
+        font-size: 40px;
+        border: 0;
+        background-color: transparent;
+        color: white;
+        top: 0%;
+        right: 2%;
+        cursor: pointer;
+    }
+    .bar{
+        display: block;
+        padding: 0;
+        font-size: 50px;
+        color: white;
+        cursor: pointer;
+    }
+}
